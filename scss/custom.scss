@@ -1,0 +1,42 @@
+/*
+100% : ocupa el 100% del contenido
+100vh: ocupa el 100% del tamaño principal de la pantalla, si el contenido sobrepasa el 
+       tamaño de la pantalla no lo cuenta
+
+*/
+.cabeza {
+    position: fixed;
+    width: 100%;
+    height: 48px;
+    padding-left: 230px;
+}
+
+.lateral {
+    position: fixed;
+    width: 230px;
+}
+.principal {
+    padding: 48px 0 0 230px;
+    justify-content: space-between;
+}
+// si solo ponemos height 48 se seguira deformando el alto porque es 
+// flexible, por eso tenemos que anclarlo por arriba y por abajo
+.pie { 
+    min-height: 48px;
+    max-height: 48px;
+}
+@media (max-width: 500px){
+    .lateral{
+        margin-left: -230px;
+        transition: 100ms;
+    }
+    .principal {
+        padding-left: 0px;
+        transition: 100ms;
+    }
+    .cabeza{
+        padding-left: 0px;
+        transition: 100ms;
+    }
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
